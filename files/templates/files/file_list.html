@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+List of Files
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">List of Files</h1>
+    <div class="space-y-4">
+        {% for file in files %}
+        <div class="card shadow-xl bg-white p-4 rounded-lg">
+            <p class="text-lg font-medium">
+                <a href="{% url 'file_detail' file.id %}" class="text-blue-500 hover:underline">{{ file.name }}</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="mt-6">
+        <button class="inline-block cursor-pointer rounded-md bg-gray-800 px-6 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900">
+            <a href="{% url 'upload_file' %}">Load File</a>
+        </button>
+    </div>
+</div>
+{% endblock %}

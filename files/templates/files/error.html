@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Error
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold text-red-600 mb-4">Error!</h1>
+    <p class="text-lg text-gray-700 mb-6">{{ message }}</p>
+    <a href="{% url 'file_list' %}" class="btn btn-outline bg-gray-800 text-white hover:bg-gray-900 px-4 py-2 rounded-md">
+        Назад до списку файлів
+    </a>
+</div>
+{% endblock %}

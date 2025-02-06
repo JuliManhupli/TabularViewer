@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Upload Success
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+
+    <h1 class="text-4xl font-bold text-green-600 mb-4">File uploaded successfully!</h1>
+
+    <a href="{% url 'file_list' %}" class="btn btn-outline bg-green-800 text-white hover:bg-green-900 px-4 py-2 rounded-md">
+        Back to File list
+    </a>
+</div>
+{% endblock %}

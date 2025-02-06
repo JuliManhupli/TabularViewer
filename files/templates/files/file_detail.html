@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+File Detail: {{ file.name }}
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">{{ file.name }}</h1>
+
+    <p class="text-lg mb-6 text-gray-600">Uploaded at: {{ file.uploaded_at }}</p>
+
+    <div class="overflow-x-auto bg-white shadow-lg rounded-lg p-4 mb-6">
+        <h2 class="text-xl font-semibold mb-4">File Data:</h2>
+        <div>
+            {{ table | safe }}
+        </div>
+    </div>
+
+    <a href="{% url 'file_list' %}" class="btn btn-outline bg-gray-800 text-white hover:bg-gray-900">
+        Назад до списку файлів
+    </a>
+</div>
+{% endblock %}
